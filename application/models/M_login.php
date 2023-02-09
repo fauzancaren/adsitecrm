@@ -15,11 +15,22 @@ class M_login extends CI_Model
         $this->load->model('M_app');
 	}
 
-    function login($username, $password)
+    function login_email($email)
 	{
-		$user = str_replace("'", "''", $username);
-		$pass = $this->M_app->EncryptedPassword(str_replace("'", "''", $password));
-        $query = $this->db->where("email",$username)->where("password",$password)->get("user");
+		$user = str_replace("'", "''", $email);
+		$query = $this->db->where("email",$user)->get("user");
+		if ($query->num_rows() == 1) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+    function login($email, $password)
+	{
+		$user = str_replace("'", "''", $email);
+		//$pass = $this->M_app->EncryptedPassword(str_replace("'", "''", $password));
+		$pass = str_replace("'", "''", $password);
+        $query = $this->db->where("email",$user)->where("password",$password)->get("user");
 		if ($query->num_rows() == 1) {
 			return $query->row();
 		} else {

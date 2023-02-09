@@ -19,4 +19,23 @@ class Login extends CI_Controller {
             $this->load->view('template/login',$data); 
         }
     }
+    public function check_login()
+    { 
+        $email = $this->input->post('email');
+        $password = $this->input->post('password'); 
+        $row = $this->M_login->login_email($email); 
+        if (!$row) { 
+            $data["error"] = "Email belum Terdaftar";
+            $this->load->view('template/login',$data); 
+            
+            return false;
+        }
+
+        $row = $this->M_login->login($email, $password);
+        if (!$row) { 
+            $data["error"] = "password tidak sesuai";
+            $this->load->view('template/login',$data);  
+            return false;
+        } 
+    }
 }

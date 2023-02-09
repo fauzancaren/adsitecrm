@@ -19,7 +19,7 @@
     <div class="app">
         <div class="container-fluid p-0 h-100">
             <div class="row no-gutters h-100 full-height">
-                <div class="col-lg-4 d-none d-lg-flex bg" style="background-image:url('assets/images/others/bg-login.jpg')">
+                <div class="col-lg-4 d-none d-lg-flex bg" style="background-image:url('<?= base_url("assets/images/others/bg-login.jpg")?>')">
                     <div class="d-flex h-100 p-h-40 p-v-15 flex-column justify-content-between">
                         <div>
 
@@ -50,7 +50,7 @@
                             <div class="col-md-8 col-lg-7 col-xl-6 mx-auto px-5">
                                 <h2>Sign In</h2>
                                 <p class="m-b-30">Enter your credential to get access</p>
-                                <form action="process/login_check.php" method="post">
+                                <form action="<?= base_url("login/check_login") ?>" method="post">
                                     <div class="form-group">
                                         <label class="font-weight-semibold" for="userName">Username:</label>
                                         <div class="input-affix">
@@ -88,12 +88,12 @@
     </div>
 
     <!-- Core Vendors JS -->
-    <script src="assets/js/vendors.min.js"></script>
+    <script src="<?= base_url("assets/js/vendors.min.js") ?>"></script>
 
     <!-- page js -->
 
     <!-- Core JS -->
-    <script src="assets/js/app.min.js"></script>
+    <script src="<?= base_url("assets/js/app.min.js") ?>"></script>
 
 </body>
 
