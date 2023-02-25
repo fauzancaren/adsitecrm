@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class contacted_leads extends CI_Controller
+class Contacted_leads extends CI_Controller
 {
     function __construct()
     {

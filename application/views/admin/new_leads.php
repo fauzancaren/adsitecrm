@@ -43,8 +43,8 @@
             </button>
             <div class="dropdown-menu">
                 <a href="<?= base_url("contacted_leads") ?>" class="dropdown-item btn" type="button">Contacted</a>
-                <a href="<?= base_url("visit_leads") ?>" class="dropdown-item btn" type="button">Visit</a>
-                <a href="<?= base_url("close") ?>" class="dropdown-item btn" type="button">Close</a>
+                <a href="<?= base_url("visit") ?>" class="dropdown-item btn" type="button">Visit</a>
+                <a href="<?= base_url("close_leads") ?>" class="dropdown-item btn" type="button">Close</a>
                 <a href="pending.php" class="dropdown-item btn" type="button">Pending</a>
                 <a href="invalid.php" class="dropdown-item btn" type="button">Invalid</a>
             </div>

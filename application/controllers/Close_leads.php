@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class close extends CI_Controller
+class Close_leads extends CI_Controller
 {
     function __construct()
     {
@@ -14,7 +14,7 @@ class close extends CI_Controller
         //if(get_cookie('level') != "Admin") redirect("login", 'refresh'); 
         $data = null;
         $this->load->view('template/header', $data);
-        $this->load->view('admin/close', $data);
+        $this->load->view('admin/close_leads', $data);
         $this->load->view('template/footer', $data);
         $this->load->view('template/navbar_mobile', $data);
     }
