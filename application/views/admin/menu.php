@@ -22,13 +22,16 @@
             <div class="avatar avatar-text bg-white">
                 <span class="text-primary font-size-20">
                     <?php
-                    $name = $row['name'];
-                    echo $name[0]; ?>
+                    //$name = $row['name'];
+                    //echo $name[0]; 
+                    ?>
                 </span>
             </div>
             <div class="media-body p-l-15">
-                <h5 class="m-b-0 text-white"><?php echo $row['name']; ?></h5>
-                <span class="text-white"><?php echo $row['level']; ?></span>
+                <h5 class="m-b-0 text-white"><?php //echo $row['name']; 
+                                                ?></h5>
+                <span class="text-white"><?php //echo $row['level']; 
+                                            ?></span>
             </div>
         </div>
     </div>
