@@ -11,7 +11,7 @@ $row =  $this->db->where("email", $email)->get("user")->row_array();
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>CRM - Adsite.id</title>
     <!-- Favicon -->
-    <link rel="shortcut icon" href="<?= base_url("assets/images/logo/favicon.png") ?>">
+    <link rel="shortcut icon" href="<?= base_url("assets/images/logo/logo_adsite.png") ?>">
 
     <!-- Core css -->
     <link href="<?= base_url("assets/css/app.min.css") ?>" rel="stylesheet">
