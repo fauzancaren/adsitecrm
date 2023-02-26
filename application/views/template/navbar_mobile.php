@@ -3,7 +3,7 @@
 
         <div class="row d-flex align-items-center">
 
-            <a href="<?= base_url("index") ?>" class="col">
+            <a href="<?= base_url("admin/index") ?>" class="col">
                 <span class="icon-holder d-flex justify-content-center align-items-center">
                     <i class="anticon anticon-appstore font-size-20"></i>
                 </span>
