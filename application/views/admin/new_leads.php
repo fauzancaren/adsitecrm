@@ -42,11 +42,11 @@
                 New Leads
             </button>
             <div class="dropdown-menu">
-                <a href="<?= base_url("contacted_leads") ?>" class="dropdown-item btn" type="button">Contacted</a>
-                <a href="<?= base_url("visit") ?>" class="dropdown-item btn" type="button">Visit</a>
-                <a href="<?= base_url("close_leads") ?>" class="dropdown-item btn" type="button">Close</a>
-                <a href="pending.php" class="dropdown-item btn" type="button">Pending</a>
-                <a href="invalid.php" class="dropdown-item btn" type="button">Invalid</a>
+                <a href="<?= base_url("admin/contacted_leads") ?>" class="dropdown-item btn" type="button">Contacted</a>
+                <a href="<?= base_url("admin/visit") ?>" class="dropdown-item btn" type="button">Visit</a>
+                <a href="<?= base_url("admin/close_leads") ?>" class="dropdown-item btn" type="button">Close</a>
+                <a href="<?= base_url("admin/pending_leads") ?>" class="dropdown-item btn" type="button">Pending</a>
+                <a href="<?= base_url("admin/invalid_leads") ?>" class="dropdown-item btn" type="button">Invalid</a>
             </div>
         </div>
 
@@ -138,7 +138,7 @@
                 ?>
 
 
-                    <li class="list-group-item p-h-0 align-items-center list" onclick="location.href='data_leads.php?id=<?php echo $isi_data['id']; ?>'">
+                    <li class="list-group-item p-h-0 align-items-center list" onclick="location.href='<?= base_url('admin/data_leads') ?>?id=<?php echo $isi_data['id']; ?>'">
 
                         <div class="d-flex align-items-center justify-content-between">
 

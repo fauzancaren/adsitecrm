@@ -32,30 +32,31 @@
     <div class="d-flex align-items-center justify-content-between">
         <div class="media m-v-10 align-items-center">
             <div class="media-body m-l-15">
-                <h4 class="m-b-0">Contacted</h4>
+                <h4 class="m-b-0">Invalid</h4>
                 <!-- <span class="text-gray">Project Manager</span>-->
             </div>
         </div>
+
         <div class="dropdown dropdown-animated scale-left mr-2 ">
             <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                Contacted
+                Invalid
             </button>
             <div class="dropdown-menu">
                 <a href="<?= base_url("admin/new_leads") ?>" class="dropdown-item btn" type="button">New Leads</a>
+                <a href="<?= base_url("admin/contacted_leads") ?>" class="dropdown-item btn" type="button">Contacted</a>
                 <a href="<?= base_url("admin/visit") ?>" class="dropdown-item btn" type="button">Visit</a>
                 <a href="<?= base_url("admin/close_leads") ?>" class="dropdown-item btn" type="button">Close</a>
                 <a href="<?= base_url("admin/pending_leads") ?>" class="dropdown-item btn" type="button">Pending</a>
-                <a href="<?= base_url("admin/invalid_leads") ?>" class="dropdown-item btn" type="button">Invalid</a>
+
             </div>
         </div>
+
     </div>
 </div>
 
-
-
-
 <div class="card">
     <div class="card-body">
+
 
         <div class="d-lg-none d-sm-none d-block py-3">
             <form action="search_leads.php" method="get" class=" form-inline  ">
@@ -117,6 +118,8 @@
 
                 <?php
 
+
+
                 $tanggal_sekarang = date('Y-m-d');
                 $tanggal_sekarang_convert = date('d/m/Y');
 
@@ -126,7 +129,7 @@
 
 
 
-                $data = $this->db->query("SELECT * FROM leads WHERE status =  'Contacted' AND category IN ('New','Cold','Warm','Hot','Reserve','Booking')  AND date_contacted BETWEEN '$interval' AND '$tanggal_sekarang' ORDER BY id DESC ")->result_array();
+                $data = $this->db->query("SELECT * FROM leads WHERE category = 'Invalid' AND date_new BETWEEN '$interval' AND '$tanggal_sekarang' ORDER BY id DESC ")->result_array();
 
 
                 foreach ($data as $isi_data) {
@@ -153,7 +156,7 @@
                                 <div>
                                     <h6 class="text-dark mb-0 "> <?php echo $isi_data['name']; ?></h6>
 
-                                    <span class="text-muted font-size-13"><?php echo $date_new . ' ' . $timenew_cvt; ?></span>
+                                    <span class="text-muted font-size-13 "><?php echo $date_new . ' ' . $timenew_cvt; ?></span>
                                 </div>
                             </div>
 
@@ -200,10 +203,41 @@
                                 <p><?php echo $isi_data['source']; ?></p>
                             </div>
 
+
+                            <?php
+
+                            $nomorhp = $isi_data['contact'];
+                            //Terlebih dahulu kita trim dl
+                            $nomorhp = trim($nomorhp);
+                            //bersihkan dari karakter yang tidak perlu
+                            $nomorhp = strip_tags($nomorhp);
+                            // Berishkan dari spasi
+                            $nomorhp = str_replace(" ", "", $nomorhp);
+                            // bersihkan dari bentuk seperti  (022) 66677788
+                            $nomorhp = str_replace("(", "", $nomorhp);
+                            // bersihkan dari format yang ada titik seperti 0811.222.333.4
+                            $nomorhp = str_replace(".", "", $nomorhp);
+                            $nomorhp = str_replace("-", "", $nomorhp);
+
+                            //cek apakah mengandung karakter + dan 0-9
+                            if (!preg_match('/[^+0-9]/', trim($nomorhp))) {
+                                // cek apakah no hp karakter 1-3 adalah +62
+                                if (substr(trim($nomorhp), 0, 3) == '+62') {
+                                    $nomorhp = trim($nomorhp);
+                                }
+                                // cek apakah no hp karakter 1 adalah 0
+                                elseif (substr($nomorhp, 0, 1) == '0') {
+                                    $nomorhp = '+62' . substr($nomorhp, 1);
+                                }
+                            }
+
+                            ?>
+
+
                             <div class="font-size-13 align-items-center d-lg-block d-md-block d-none col">
-                                <button class="btn btn-sm btn-primary">
+                                <a href="https://wa.me/<?php echo $nomorhp; ?>" class="btn btn-sm btn-primary">
                                     <span>Whatsapp</span>
-                                </button>
+                                </a>
                             </div>
                         </div>
 
@@ -215,7 +249,6 @@
             </ul>
         </div>
     </div>
-
 
 
 
