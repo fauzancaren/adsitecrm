@@ -3,19 +3,15 @@
         ### PAGE START  
         ##########################################################################################
         -->
-
-<div class="d-lg-none d-sm-none d-block p-3 pb-4">
-    <form action="search_leads.php" method="get" class="form-inline">
-        <div class="input-group">
-            <input type="text" class="form-control form-control-sm bg-white " placeholder="Search leads..." aria-label="Search" aria-describedby="basic-addon2" name="search">
-            <div class="input-group-append">
-                <button class="btn btn-primary " type="submit">
-                    <i class="fas fa-search fa-sm"></i>
-                </button>
-            </div>
-        </div>
-    </form>
-</div>
+        <div class="d-lg-none d-sm-none" style="
+    background: #0B1460;
+    width: 100%;
+    height: 25rem;
+    position: absolute;
+    left: 0;
+    top: 0;
+    border-radius: 43px;
+"></div>
 <div class="d-lg-none d-block px-3 ">
     <div class="card bg-primary p-3">
         <div class="media m-v-10 align-items-center">
@@ -29,6 +25,18 @@
         </div>
     </div>
 </div>
+<div class="d-lg-none d-sm-none d-block p-3 pb-4">
+    <form action="search_leads.php" method="get" class="form-inline">
+        <div class="input-group">
+            <input type="text" class="form-control form-control-sm bg-white " placeholder="Search leads..." aria-label="Search" aria-describedby="basic-addon2" name="search">
+            <div class="input-group-append">
+                <button class="btn btn-primary " type="submit">
+                    <i class="fas fa-search fa-sm"></i>
+                </button>
+            </div>
+        </div>
+    </form>
+</div>
 
 <!--  CARD DETAIL   -->
 <div class="col-lg-12 px-4 ">
@@ -36,16 +44,16 @@
         <div class="col-lg-3 col-md-6 col-6 px-1">
             <a href="<?= base_url("admin/leads/new") ?>">
                 <div class="card w-100 align-items-stretch">
-                    <div class="card-body p-lg-4 p-md-4 p-sm-4 py-2 ">
-                        <div class="avatar avatar-icon avatar-lg avatar-green d-lg-none d-md-none d-sm-none d-block  mb-1">
+                    <div class="card-body p-lg-4 p-md-4 p-sm-4 text-center">
+                        <div class="avatar avatar-icon avatar-lg avatar-green d-lg-none d-md-none d-sm-none d-inline-block  mb-1">
                             <i class="anticon anticon-solution"></i>
                         </div>
                         <div class="d-flex justify-content-lg-between justify-content-md-between justify-content-sm-between justify-content-center">
                             <div>
                                 <p class="m-b-0 font-size-lg-14 font-size-10">New</p>
-                                <h5 class="m-b-0 ">
-                                    <span class="d-flex justify-content-lg-start justify-content-sm-start justify-content-center counter" id="data-ds-new">0</span>
-                                </h5>
+                                <h2 class="m-b-0 ">
+                                    <span class="d-flex justify-content-lg-start justify-content-sm-start justify-content-center counter fw-bold" id="data-ds-new">0</span>
+                                </h2>
                             </div>
                             <div class="avatar avatar-icon avatar-lg avatar-green d-lg-block d-md-block d-sm-block d-none">
                                 <i class="anticon anticon-solution"></i>
@@ -59,16 +67,16 @@
         <div class="col-lg-3 col-md-6 col-6 px-1 pb-0">
             <a href="<?= base_url("admin/leads/contacted") ?>">
                 <div class="card ">
-                    <div class="card-body p-lg-4 p-md-4 p-sm-4 py-2">
-                        <div class="avatar avatar-icon avatar-lg avatar-cyan d-lg-none d-md-none d-sm-none d-block mb-1">
+                    <div class="card-body p-lg-4 p-md-4 p-sm-4  text-center">
+                        <div class="avatar avatar-icon avatar-lg avatar-cyan d-lg-none d-md-none d-sm-none d-inline-block mb-1">
                             <i class="anticon anticon-message"></i>
                         </div>
                         <div class="d-flex justify-content-lg-between justify-content-md-between justify-content-sm-between justify-content-center">
                             <div>
                                 <p class="m-b-0 font-size-10">Contacted</p>
-                                <h5 class="m-b-0">
-                                    <span class="d-flex justify-content-lg-start justify-content-sm-start justify-content-center counter"  id="data-ds-contacted">0</span>
-                                </h5>
+                                <h2 class="m-b-0">
+                                    <span class="d-flex justify-content-lg-start justify-content-sm-start justify-content-center counter fw-bold"  id="data-ds-contacted">0</span>
+                                </h2>
                             </div>
                             <div class="avatar avatar-icon avatar-lg avatar-cyan d-lg-block d-md-block d-sm-block d-none">
                                 <i class="anticon anticon-message"></i>
@@ -83,16 +91,16 @@
         <div class="col-lg-3 col-md-6 col-6 px-1 pb-0">
             <a href="<?= base_url("admin/leads/visit") ?>">
                 <div class="card">
-                    <div class="card-body p-lg-4 p-md-4 p-sm-4 py-2">
-                        <div class="avatar avatar-icon avatar-lg avatar-gold d-lg-none d-md-none d-sm-none d-block mb-1">
+                    <div class="card-body p-lg-4 p-md-4 p-sm-4  text-center">
+                        <div class="avatar avatar-icon avatar-lg avatar-gold d-lg-none d-md-none d-sm-none d-inline-block mb-1">
                             <i class="anticon anticon-calendar"></i>
                         </div>
                         <div class="d-flex justify-content-lg-between justify-content-md-between justify-content-sm-between justify-content-center">
                             <div class="justify-content-lg-start justify-content-md-start justify-content-sm-start  justify-content-center">
                                 <p class="m-b-0 font-size-10">Visit</p>
-                                <h5 class="m-b-0">
-                                    <span class="d-flex justify-content-lg-start justify-content-sm-start justify-content-center counter"  id="data-ds-visit">0</span>
-                                </h5>
+                                <h2 class="m-b-0">
+                                    <span class="d-flex justify-content-lg-start justify-content-sm-start justify-content-center counter fw-bold"  id="data-ds-visit">0</span>
+                                </h2>
                             </div>
                             <div class="avatar avatar-icon avatar-lg avatar-gold d-lg-block d-md-block d-sm-block d-none">
                                 <i class="anticon anticon-calendar"></i>
@@ -105,16 +113,16 @@
         <div class="col-lg-3 col-md-6 col-6 px-1 pb-0 justify-content-center ">
             <a href="<?= base_url("admin/leads/close") ?>">
                 <div class="card ">
-                    <div class="card-body p-lg-4 p-md-4 p-sm-4 py-2  ">
-                        <div class="avatar avatar-icon avatar-lg avatar-red d-lg-none d-md-none d-sm-none d-block mb-1">
+                    <div class="card-body p-lg-4 p-md-4 p-sm-4 text-center">
+                        <div class="avatar avatar-icon avatar-lg avatar-red d-lg-none d-md-none d-sm-none d-inline-block mb-1">
                             <i class="anticon anticon-star "></i>
                         </div>
                         <div class="d-flex justify-content-lg-between justify-content-md-between justify-content-sm-between justify-content-center ">
                             <div class="justify-content-lg-start justify-content-md-start justify-content-sm-start  justify-content-center">
                                 <p class="m-b-0 font-size-10">Close</p>
-                                <h5 class="m-b-0 ">
-                                    <span class="d-flex justify-content-lg-start justify-content-center counter" id="data-ds-close">0</span>
-                                </h5>
+                                <h2 class="m-b-0 ">
+                                    <span class="d-flex justify-content-lg-start justify-content-center counter fw-bold" id="data-ds-close">0</span>
+                                </h2>
                             </div>
                             <div class="avatar avatar-icon avatar-lg avatar-red d-lg-block d-md-block d-sm-block d-none">
                                 <i class="anticon anticon-star"></i>
