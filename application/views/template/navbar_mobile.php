@@ -14,11 +14,11 @@
                 </span>
             </a>
             <a href="" class="col d-flex justify-content-center" type="button" data-toggle="modal" data-target="#add_leads">
-                <span class="icon-holder rounded-circle position-static p-2 p-h-10 " style=" background-color:#5d77c5">
+                <span class="icon-holder rounded-circle position-static p-2 p-h-10 " style=" background-color:#0b1460">
                     <i class="anticon anticon-plus font-size-16  text-white "></i>
                 </span>
             </a>
-            <a href="<?= base_url("admin/new_leads") ?>" class="col">
+            <a href="<?= base_url("admin/leads") ?>" class="col">
                 <span class="icon-holder d-flex justify-content-center align-items-center">
                     <i class="anticon anticon-idcard font-size-20"></i>
                 </span>

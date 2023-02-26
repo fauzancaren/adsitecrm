@@ -56,7 +56,7 @@
             bottom: 0;
             right: 0;
             transition: transform 300ms;
-            background-color: #5d77c5;
+            background-color: #0b1460;
             border-radius: 100px;
             z-index: 6;
         }
@@ -82,7 +82,7 @@
 
 
         .op {
-            background-color: #5d77c5;
+            background-color: #0b1460;
         }
     </style>
 
@@ -298,7 +298,7 @@
         ### NAVBAR DESKTOP START
         ##########################################################################################
         -->
-            <div class="side-nav text-white" style="background:#5d77c5;">
+            <div class="side-nav text-white" style="background:#0b1460;">
                 <div class="side-nav-inner">
                     <ul class="side-nav-menu scrollable">
                         <li class="nav-item dropdown mt-4 mb-1">
@@ -311,7 +311,7 @@
 
                         </li>
                         <li class="nav-item dropdown mb-1"> <!-- open -->
-                            <a href="<?= base_url("admin/new_leads") ?>">
+                            <a href="<?= base_url("admin/leads") ?>">
                                 <span class="icon-holder">
                                     <i class="anticon anticon-idcard font-size-20"></i>
                                 </span>
@@ -395,7 +395,7 @@
                             </span>
                         </a>
                         <a href="<?= base_url("admin/leads") ?>" class="col" type="button" data-toggle="modal" data-target="#add_leads">
-                            <span class="icon-holder rounded-circle position-static mb-5 p-2 p-h-10" style="background-color:#5d77c5">
+                            <span class="icon-holder rounded-circle position-static mb-5 p-2 p-h-10" style="background-color:#0b1460">
                                 <i class="anticon anticon-plus font-size-15   text-white "></i>
                             </span>
                         </a>
@@ -419,7 +419,6 @@
         ##########################################################################################
         ### NAVBAR MOBILE END  
         ##########################################################################################
-        -->
-
+        --> 
             <div class="page-container">
                 <div class="main-content">

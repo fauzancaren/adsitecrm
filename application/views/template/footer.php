@@ -1,19 +1,19 @@
-</div>
-</div>
-<!-- Footer START 
-        <footer class="footer">
-            <div class="footer-content">
-                <p class="m-b-0">klikdigitalmedia.com</p>
-                <span>
-                    <a href="" class="text-gray m-r-15">Term &amp; Conditions</a>
-                    <a href="" class="text-gray">Privacy &amp; Policy</a>
-                </span>
-            </div>
-        </footer>
-        -->
+      
+    </div>
+    <!-- Footer START 
+            <footer class="footer">
+                <div class="footer-content">
+                    <p class="m-b-0">klikdigitalmedia.com</p>
+                    <span>
+                        <a href="" class="text-gray m-r-15">Term &amp; Conditions</a>
+                        <a href="" class="text-gray">Privacy &amp; Policy</a>
+                    </span>
+                </div>
+            </footer>
+            -->
 
-<div class="mb-5"></div>
-<!-- Footer END -->
+    <div class="mb-5"></div>
+    <!-- Footer END -->
 
 </div>
 <!-- Page Container END -->
@@ -661,6 +661,7 @@
         </div>
     </div>
 </div>
+
 </body>
 
 </html>
