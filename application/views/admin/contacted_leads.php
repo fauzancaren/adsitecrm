@@ -41,11 +41,11 @@
                 Contacted
             </button>
             <div class="dropdown-menu">
-                <a href="leads.php" class="dropdown-item btn" type="button">New Leads</a>
-                <a href="visit.php" class="dropdown-item btn" type="button">Visit</a>
-                <a href="close.php" class="dropdown-item btn" type="button">Close</a>
-                <a href="pending.php" class="dropdown-item btn" type="button">Pending</a>
-                <a href="Invalid.php" class="dropdown-item btn" type="button">Invalid</a>
+                <a href="<?= base_url("admin/new_leads") ?>" class="dropdown-item btn" type="button">New Leads</a>
+                <a href="<?= base_url("admin/visit") ?>" class="dropdown-item btn" type="button">Visit</a>
+                <a href="<?= base_url("admin/close_leads") ?>" class="dropdown-item btn" type="button">Close</a>
+                <a href="<?= base_url("admin/pending_leads") ?>" class="dropdown-item btn" type="button">Pending</a>
+                <a href="<?= base_url("admin/invalid_leads") ?>" class="dropdown-item btn" type="button">Invalid</a>
             </div>
         </div>
     </div>
