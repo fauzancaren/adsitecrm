@@ -312,7 +312,7 @@ $row =  $this->db->where("email", $email)->get("user")->row_array();
 
                         </li>
                         <li class="nav-item dropdown mb-1"> <!-- open -->
-                            <a href="<?= base_url("new_leads") ?>">
+                            <a href="<?= base_url("New_leads") ?>">
                                 <span class="icon-holder">
                                     <i class="anticon anticon-idcard font-size-20"></i>
                                 </span>
