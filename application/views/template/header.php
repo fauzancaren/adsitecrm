@@ -303,7 +303,7 @@ $row =  $this->db->where("email", $email)->get("user")->row_array();
                 <div class="side-nav-inner">
                     <ul class="side-nav-menu scrollable">
                         <li class="nav-item dropdown mt-4 mb-1">
-                            <a href="index.php">
+                            <a href="<?= base_url("admin/index") ?>">
                                 <span class="icon-holder">
                                     <i class="anticon anticon-appstore font-size-20"></i>
                                 </span>
@@ -312,7 +312,7 @@ $row =  $this->db->where("email", $email)->get("user")->row_array();
 
                         </li>
                         <li class="nav-item dropdown mb-1"> <!-- open -->
-                            <a href="<?= base_url("New_leads") ?>">
+                            <a href="<?= base_url("admin/new_leads") ?>">
                                 <span class="icon-holder">
                                     <i class="anticon anticon-idcard font-size-20"></i>
                                 </span>

@@ -61,7 +61,7 @@ $sum_close = $this->db->query("SELECT * FROM leads WHERE status ='close' AND dat
 <div class="col-lg-12 px-4 ">
     <div class="row">
         <div class="col-lg-2 col-md-4 col-4 px-1">
-            <a href="<?= base_url("admin/new_leads") ?>">
+            <a href="<?= base_url("Admin/new_leads") ?>">
                 <div class="card w-100 align-items-stretch">
                     <div class="card-body p-lg-4 p-md-4 p-sm-4 py-2 ">
                         <div class="avatar avatar-icon avatar-lg avatar-green d-lg-none d-md-none d-sm-none d-block  mb-1">
@@ -84,7 +84,7 @@ $sum_close = $this->db->query("SELECT * FROM leads WHERE status ='close' AND dat
         </div>
 
         <div class="col-lg-2 col-md-4 col-4 px-1 pb-0">
-            <a href="<?= base_url("admin/contacted_leads") ?>">
+            <a href="<?= base_url("Admin/contacted_leads") ?>">
                 <div class="card ">
                     <div class="card-body p-lg-4 p-md-4 p-sm-4 py-2">
                         <div class="avatar avatar-icon avatar-lg avatar-cyan d-lg-none d-md-none d-sm-none d-block mb-1">
@@ -108,7 +108,7 @@ $sum_close = $this->db->query("SELECT * FROM leads WHERE status ='close' AND dat
         </div>
 
         <div class="col-lg-2 col-md-4 col-4 px-1 pb-0">
-            <a href="<?= base_url("admin/visit") ?>">
+            <a href="<?= base_url("Admin/visit") ?>">
                 <div class="card">
                     <div class="card-body p-lg-4 p-md-4 p-sm-4 py-2">
                         <div class="avatar avatar-icon avatar-lg avatar-gold d-lg-none d-md-none d-sm-none d-block mb-1">
@@ -130,7 +130,7 @@ $sum_close = $this->db->query("SELECT * FROM leads WHERE status ='close' AND dat
             </a>
         </div>
         <div class="col-lg-2 col-md-4 col-4 px-1 pb-0 justify-content-center ">
-            <a href="<?= base_url("admin/close_leads") ?>">
+            <a href="<?= base_url("Admin/close_leads") ?>">
                 <div class="card ">
                     <div class="card-body p-lg-4 p-md-4 p-sm-4 py-2  ">
                         <div class="avatar avatar-icon avatar-lg avatar-red d-lg-none d-md-none d-sm-none d-block mb-1">
@@ -152,7 +152,7 @@ $sum_close = $this->db->query("SELECT * FROM leads WHERE status ='close' AND dat
             </a>
         </div>
         <div class="col-lg-2 col-md-4 col-4 px-1 pb-0 ">
-            <a href="<?= base_url("admin/pending_leads") ?>">
+            <a href="<?= base_url("Admin/pending_leads") ?>">
                 <div class="card ">
                     <div class="card-body p-lg-4 p-md-4 p-sm-4 py-2">
                         <div class="avatar avatar-icon avatar-lg avatar-purple d-lg-none d-md-none d-sm-none d-block mb-1">
@@ -175,7 +175,7 @@ $sum_close = $this->db->query("SELECT * FROM leads WHERE status ='close' AND dat
             </a>
         </div>
         <div class="col-lg-2 col-md-4 col-4 px-1 pb-0 ">
-            <a href="<?= base_url("admin/invalid_leads") ?>">
+            <a href="<?= base_url("Admin/invalid_leads") ?>">
                 <div class="card ">
                     <div class="card-body p-lg-4 p-md-4 p-sm-4 py-2 ">
                         <div class="avatar avatar-icon avatar-lg avatar-blue d-lg-none d-md-none d-sm-none d-block mb-1">
