@@ -18,4 +18,22 @@ class Admin extends CI_Controller
         $this->load->view('template/footer', $data);
         $this->load->view('template/navbar_mobile', $data);
     }
+    public function close_leads()
+    {
+        //if(get_cookie('level') != "Admin") redirect("login", 'refresh'); 
+        $data = null;
+        $this->load->view('template/header', $data);
+        $this->load->view('agent/agent', $data);
+        $this->load->view('template/footer', $data);
+        $this->load->view('template/navbar_mobile', $data);
+    }
+    public function contacted_leads()
+    {
+        //if(get_cookie('level') != "Admin") redirect("login", 'refresh'); 
+        $data = null;
+        $this->load->view('template/header', $data);
+        $this->load->view('admin/contacted_leads', $data);
+        $this->load->view('template/footer', $data);
+        $this->load->view('template/navbar_mobile', $data);
+    }
 }
