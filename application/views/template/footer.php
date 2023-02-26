@@ -125,8 +125,6 @@
 
 </div>
 </div>
-<!-- Core Vendors JS -->
-<script src="<?= base_url("assets/js/vendors.min.js") ?>"></script>
 
 <!-- page js -->
 <script src="<?= base_url("assets/vendors/chartjs/Chart.min.js") ?>"></script>

@@ -1,7 +1,3 @@
-<?php
-$email = $_SESSION['email'];
-$row =  $this->db->where("email", $email)->get("user")->row_array();
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -91,6 +87,9 @@ $row =  $this->db->where("email", $email)->get("user")->row_array();
     </style>
 
 
+    <!-- Core Vendors JS -->
+    <script src="<?= base_url("assets/js/vendors.min.js") ?>"></script>
+    <script src="<?= base_url("assets/js/moment/moment.min.js") ?>"></script>
 </head>
 
 <body>
@@ -303,7 +302,7 @@ $row =  $this->db->where("email", $email)->get("user")->row_array();
                 <div class="side-nav-inner">
                     <ul class="side-nav-menu scrollable">
                         <li class="nav-item dropdown mt-4 mb-1">
-                            <a href="<?= base_url("admin/index") ?>">
+                            <a href="<?= base_url("admin") ?>">
                                 <span class="icon-holder">
                                     <i class="anticon anticon-appstore font-size-20"></i>
                                 </span>
@@ -358,7 +357,7 @@ $row =  $this->db->where("email", $email)->get("user")->row_array();
                     </li>
                     -->
                         <li class="nav-item dropdown mb-1">
-                            <a href="profile.php?id=<?php echo $row['id']; ?>">
+                            <a href="<?= base_url("admin/profile")?>">
                                 <span class="icon-holder">
                                     <i class="anticon anticon-setting font-size-20"></i>
                                 </span>
@@ -385,28 +384,28 @@ $row =  $this->db->where("email", $email)->get("user")->row_array();
 
                     <div class="row d-flex">
 
-                        <a href="index.php" class="col">
+                        <a href="<?= base_url("admin") ?>" class="col">
                             <span class="icon-holder">
                                 <i class="anticon anticon-appstore font-size-20"></i>
                             </span>
                         </a>
-                        <a href="report.php" class="col">
+                        <a href="<?= base_url("admin/report") ?>" class="col">
                             <span class="icon-holder">
                                 <i class="anticon anticon-pie-chart font-size-20"></i>
                             </span>
                         </a>
-                        <a href="leads.php" class="col" type="button" data-toggle="modal" data-target="#add_leads">
+                        <a href="<?= base_url("admin/leads") ?>" class="col" type="button" data-toggle="modal" data-target="#add_leads">
                             <span class="icon-holder rounded-circle position-static mb-5 p-2 p-h-10" style="background-color:#5d77c5">
                                 <i class="anticon anticon-plus font-size-15   text-white "></i>
                             </span>
                         </a>
-                        <a href="leads.php" class="col">
+                        <a href="<?= base_url("admin/leads") ?>" class="col">
                             <span class="icon-holder">
                                 <i class="anticon anticon-idcard font-size-20"></i>
                             </span>
                         </a>
 
-                        <a href="account.php" class="col">
+                        <a href="<?= base_url("admin/profile") ?>" class="col">
                             <span class="icon-holder">
                                 <i class="anticon anticon-team font-size-20"></i>
                             </span>

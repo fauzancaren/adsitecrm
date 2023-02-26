@@ -3,12 +3,12 @@
 
         <div class="row d-flex align-items-center">
 
-            <a href="<?= base_url("admin/index") ?>" class="col">
+            <a href="<?= base_url("admin") ?>" class="col">
                 <span class="icon-holder d-flex justify-content-center align-items-center">
                     <i class="anticon anticon-appstore font-size-20"></i>
                 </span>
             </a>
-            <a href="report.php" class="col">
+            <a href="<?= base_url("admin/report") ?>" class="col">
                 <span class="icon-holder d-flex justify-content-center align-items-center">
                     <i class="anticon anticon-pie-chart font-size-20"></i>
                 </span>
@@ -24,7 +24,7 @@
                 </span>
             </a>
 
-            <a href="account.php" class="col">
+            <a href="<?= base_url("admin/profile") ?>" class="col">
                 <span class="icon-holder d-flex justify-content-center align-items-center">
                     <i class="anticon anticon-team font-size-20"></i>
                 </span>
