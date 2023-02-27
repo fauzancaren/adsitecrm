@@ -656,7 +656,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <a href="process/logout.php" type="button" class="btn btn-primary">Logout</a>
+                <a href="<?= base_url("login/checkout")?>" type="button" class="btn btn-primary">Logout</a>
             </div>
         </div>
     </div>

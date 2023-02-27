@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>CRM - Adsite.id</title>
     <!-- Favicon -->
-    <link rel="shortcut icon" href="<?= base_url("assets/images/logo/adsite/logo_adsite.png") ?>">
+    <link rel="shortcut icon" href="<?= base_url("assets/images/logo/adsite/logo_adsite.png") ?>" type="img/png">
 
     <!-- Core css -->
     <link href="<?= base_url("assets/css/app.min.css") ?>" rel="stylesheet">
@@ -233,8 +233,8 @@
                                             <i class="anticon anticon-user"></i>
                                         </div>
                                         <div class="m-l-10">
-                                            <p class="m-b-0 text-dark font-weight-semibold"><?php echo $row['name']; ?></p>
-                                            <p class="m-b-0 opacity-07"><?php echo $row['level']; ?></p>
+                                            <p class="m-b-0 text-dark font-weight-semibold"><?= $this->session->userdata('username'); ?></p>
+                                            <p class="m-b-0 opacity-07"><?= $this->session->userdata('level'); ?></p>
                                         </div>
                                     </div>
                                 </div>
