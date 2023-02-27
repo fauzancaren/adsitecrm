@@ -3,10 +3,10 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>CRM - KLIK DIGITAL MEDIA</title>
+    <title>CRM - Adsite.id</title>
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="<?= base_url("assets/images/logo/favicon.png")?>">
+    <link rel="shortcut icon" href="<?= base_url("assets/images/logo/adsite/logo_adsite.png") ?>" type="img/png">
 
     <!-- page css -->
 
