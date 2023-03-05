@@ -338,7 +338,7 @@
                         </li>
 
                         <li class="nav-item dropdown mb-1">
-                            <a href="account.php">
+                            <a href="<?= base_url("admin/account") ?>">
                                 <span class="icon-holder">
                                     <i class="anticon anticon-team font-size-20"></i>
                                 </span>
