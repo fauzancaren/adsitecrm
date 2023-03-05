@@ -3,7 +3,7 @@
         ### PAGE START  
         ##########################################################################################
         -->
-<div class="d-lg-none d-sm-none" style="
+<div class="d-lg-none " style="
     background: #0B1460;
     width: 100%;
     height: 18rem;
@@ -25,9 +25,9 @@
         </div>
     </div>
 </div>
-<div class="d-lg-none d-sm-none d-block p-3 pb-4">
-    <form action="search_leads.php" method="get" class="form-inline">
-        <div class="input-group">
+<div class="d-lg-none d-sm-block d-block py-3 pb-4">
+    <form action="search_leads.php" method="get" class="form-inline  ">
+        <div class="input-group col-12">
             <input type="text" class="form-control form-control-sm bg-white " placeholder="Search leads..." aria-label="Search" aria-describedby="basic-addon2" name="search">
             <div class="input-group-append">
                 <button class="btn btn-light " type="submit">

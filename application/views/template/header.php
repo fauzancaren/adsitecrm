@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -146,7 +145,7 @@
 
                         <li class="mr-lg-5">
                             <div>
-                                <form action="search_leads.php" method="get" class=" d-none d-sm-inline-block form-inline  ">
+                                <form action="search_leads.php" method="get" class=" d-lg-block d-none d-sm-none form-inline  ">
                                     <div class="input-group">
                                         <input type="text" class="form-control form-control-sm bg-light " placeholder="Search leads..." aria-label="Search" aria-describedby="basic-addon2" name="search">
                                         <div class="input-group-append">
@@ -357,7 +356,7 @@
                     </li>
                     -->
                         <li class="nav-item dropdown mb-1">
-                            <a href="<?= base_url("admin/profile")?>">
+                            <a href="<?= base_url("admin/profile") ?>">
                                 <span class="icon-holder">
                                     <i class="anticon anticon-setting font-size-20"></i>
                                 </span>
@@ -419,6 +418,6 @@
         ##########################################################################################
         ### NAVBAR MOBILE END  
         ##########################################################################################
-        --> 
+        -->
             <div class="page-container">
                 <div class="main-content">
