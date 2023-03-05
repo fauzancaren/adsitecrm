@@ -220,8 +220,8 @@
             </div>
         </div>
     </div>
-    <div class="col-lg-4 col-12 d-flex align-items-stretch">
-        <div class="card w-100">
+    <div class="col-lg-4 col-12 d-flex align-items-stretch p-0">
+        <div class="card w-100 ">
             <div class="card-body">
                 <div class="d-flex justify-content-between align-items-center">
                     <h5>Recent Deals</h5>
