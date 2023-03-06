@@ -1,7 +1,8 @@
 <?php
 
 
-$id = $_GET['id'];
+
+$id = $this->uri->segment(3);
 
 $data = $this->db->query("SELECT * from leads where id='$id' ")->result_array();
 
