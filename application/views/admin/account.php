@@ -86,7 +86,7 @@
                 ?>
 
 
-                    <li class="list-group-item p-h-0 align-items-center list" onclick="location.href='profile.php?id=<?php echo $isi_data['id']; ?>'">
+                    <li class="list-group-item p-h-0 align-items-center list" onclick="location.href='<?= base_url("admin/profile") ?>?id=<?php echo $isi_data['id']; ?>'">
 
                         <div class="d-flex align-items-center justify-content-between">
 

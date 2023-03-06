@@ -2,7 +2,7 @@
     <div class="d-flex align-items-center justify-content-between">
         <div class="media m-v-10 align-items-center">
             <div class="media-body m-l-15">
-                <h4 class="m-b-0">Data Leads (<span class="category">New</span>)</h4> 
+                <h4 class="m-b-0">Data Leads (<span class="category">New</span>)</h4>
             </div>
         </div>
         <div class="dropdown dropdown-animated scale-left mr-2" id="lead-status">
@@ -11,14 +11,14 @@
                 <button class="dropdown-item btn" type="button" id="btn-new">New</button>
                 <button class="dropdown-item btn" type="button" id="btn-contacted">Contacted</button>
                 <button class="dropdown-item btn" type="button" id="btn-visit">Visit</button>
-                <button class="dropdown-item btn" type="button" id="btn-pending">Close</button> 
+                <button class="dropdown-item btn" type="button" id="btn-pending">Close</button>
             </div>
         </div>
     </div>
 </div>
 
 <div class="card">
-    <div class="card-body"> 
+    <div class="card-body">
         <div class="d-lg-none d-sm-none d-block py-3">
             <form action="search_leads.php" method="get" class="form-inline">
                 <div class="input-group">
@@ -30,21 +30,21 @@
                     </div>
                 </div>
             </form>
-        </div> 
+        </div>
         <div class="">
-            <ul class="list-group list-group-flush" id="list-leads"> 
-               
+            <ul class="list-group list-group-flush" id="list-leads">
+
             </ul>
         </div>
     </div>
 </div>
-    <!--  LIST DEAL SCRIPT   -->
+<!--  LIST DEAL SCRIPT   -->
 <script>
     function capitalize(word) {
         return word[0].toUpperCase() + word.slice(1).toLowerCase();
     }
     var ses_category = "<?= $category ?>";
-    reload_data = function(category){ 
+    reload_data = function(category) {
         $("#list-leads").html(`<li class="list-group-item p-h-0 "> 
                     <div class="d-flex align-items-center justify-content-between ">
                         <div class="d-flex align-items-center col-lg-2 col-md-3 col-0 pl-lg pl-0">
@@ -75,19 +75,19 @@
                         </div>
                     </div> 
                 </li> `);
-        $(".category").text(capitalize(category)); 
+        $(".category").text(capitalize(category));
         $.ajax({
             dataType: "json",
             type: "POST",
             data: {
-                "status" : capitalize(category)
+                "status": capitalize(category)
             },
             url: "<?= base_url("admin/get_list_leads") ?>",
-            success: function(data){   
-                jQuery.each(data, function(index, item) {  
-                    var datenew = new moment(item["date_new"] );
-                    var timenew = new moment(item["time_new"] );
-                    switch(item["category"]){
+            success: function(data) {
+                jQuery.each(data, function(index, item) {
+                    var datenew = new moment(item["date_new"]);
+                    var timenew = new moment(item["time_new"]);
+                    switch (item["category"]) {
                         case 'New':
                             var color = "cyan";
                             break;
@@ -120,10 +120,10 @@
                             var color = "gold";
                             break;
                         default:
-                            var color = "green"; 
-                    }  
+                            var color = "green";
+                    }
                     var html = `
-                        <li class="list-group-item p-h-0 align-items-center list new" onclick="location.href='<?= base_url("admin/data_lead/")?>${item['id']}'" style="display:none">
+                        <li class="list-group-item p-h-0 align-items-center list new" onclick="location.href='<?= base_url("admin/data_leads/") ?>${item['id']}'" style="display:none">
                             <div class="d-flex align-items-center justify-content-between">
                                 <div class="d-flex align-items-center col-lg-2 col-md-3 col-9 pl-lg pl-0">
                                     <div class="avatar avatar-text bg-default m-r-15">
@@ -159,27 +159,29 @@
                                 </div>
                             </div>
                         </li>`;
-                    $("#list-leads").append(html); 
-                    $(".list.new").delay(index * 50).fadeIn();   
-                }); 
-                $(".loading-new").fadeOut(); 
+                    $("#list-leads").append(html);
+                    $(".list.new").delay(index * 50).fadeIn();
+                });
+                $(".loading-new").fadeOut();
             }
-        });   
+        });
     }
     reload_data(ses_category);
-    $("#lead-status .dropdown-item").click(function(){ 
-        if($("#lead-status .dropdown-toggle").text() != $(this).text()){ 
-            const nextURL = "<?= base_url("admin/leads/") ?>" + $(this).text().toLowerCase(); 
+    $("#lead-status .dropdown-item").click(function() {
+        if ($("#lead-status .dropdown-toggle").text() != $(this).text()) {
+            const nextURL = "<?= base_url("admin/leads/") ?>" + $(this).text().toLowerCase();
             const nextTitle = 'CRM - Adsite.id';
-            const nextState = { additionalInformation: 'Updated the URL with JS' };  
-            window.history.pushState(nextState, nextTitle, nextURL);  
-            
+            const nextState = {
+                additionalInformation: 'Updated the URL with JS'
+            };
+            window.history.pushState(nextState, nextTitle, nextURL);
+
             reload_data($(this).text());
         };
     });
-    window.addEventListener('locationchange', function () { 
+    window.addEventListener('locationchange', function() {
         reload_data(window.location.href.split("/").pop());
-    });          
+    });
     (() => {
         let oldPushState = history.pushState;
         history.pushState = function pushState() {
@@ -200,6 +202,5 @@
         window.addEventListener('popstate', () => {
             window.dispatchEvent(new Event('locationchange'));
         });
-    })();   
- 
+    })();
 </script>
