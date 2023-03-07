@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -11,7 +12,7 @@
     <!-- page css -->
 
     <!-- Core css -->
-    <link href="<?= base_url("assets/css/app.min.css")?>" rel="stylesheet">
+    <link href="<?= base_url("assets/css/app.min.css") ?>" rel="stylesheet">
 
 </head>
 
@@ -19,7 +20,7 @@
     <div class="app">
         <div class="container-fluid p-0 h-100">
             <div class="row no-gutters h-100 full-height">
-                <div class="col-lg-4 d-none d-lg-flex bg" style="background-image:url('<?= base_url("assets/images/others/bg-login.jpg")?>')">
+                <div class="col-lg-4 d-none d-lg-flex bg" style="background-image:url('<?= base_url("assets/images/others/bg-login.jpg") ?>')">
                     <div class="d-flex h-100 p-h-40 p-v-15 flex-column justify-content-between">
                         <div>
 
@@ -32,7 +33,7 @@
                             -->
                         </div>
                         <div class="d-flex justify-content-between">
-                            <span class="text-white mr-1">©2023 klikdigitalmedia</span>
+                            <span class="text-white mr-1">©crm.adsite.id</span>
                             <ul class="list-inline ">
                                 <li class="list-inline-item">
                                     <a class="text-white text-link" href="">Legal</a>
