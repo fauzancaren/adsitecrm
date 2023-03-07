@@ -69,14 +69,6 @@
                                     </div>
                                     <div class="form-group">
                                         <div class="d-flex align-items-center justify-content-between">
-                                            <!--
-                                            <span class="font-size-13 text-muted">
-
-                                                Don't have an account
-                                                <a class="small" href="">Signup</a>
-
-                                            </span>
-                                            -->
                                             <div class="col pl-0 pr-1">
                                                 <button class="btn btn-light col d-flex align-items-center justify-content-center"><img src="<?= base_url("assets/images/others/google.png") ?>" alt="" width="20" class="mr-1"> Google</button>
                                             </div>
@@ -85,9 +77,14 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <span class="d-flex justify-content-center col-12" style="color : red;"> <?= $error ?></span>
+                                    <span class="font-size-13 text-muted mb-3 d-flex justify-content-center align-items-center">
+                                        Don't have an account
+                                        <a class="small ml-1 " href="">Signup</a>
+                                    </span>
+                                    <span class="font-size-13 d-flex justify-content-center align-items-center mt-2 " style="color : red;"> <?= $error ?></span>
                                 </form>
                             </div>
+
                         </div>
                     </div>
                 </div>
