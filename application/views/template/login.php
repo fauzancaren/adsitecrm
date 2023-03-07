@@ -20,17 +20,17 @@
     <div class="app">
         <div class="container-fluid p-0 h-100">
             <div class="row no-gutters h-100 full-height">
-                <div class="col-lg-4 d-none d-lg-flex bg" style="background-image:url('<?= base_url("assets/images/others/bg-login.jpg") ?>')">
+                <div class="col-lg-4 d-none d-lg-flex bg" style="background-image:url('<?= base_url("assets/images/others/bg-login2.jpg") ?>')">
                     <div class="d-flex h-100 p-h-40 p-v-15 flex-column justify-content-between">
                         <div>
 
                             <!-- <img src="assets/images/logo/logo-white.png" alt=""> -->
                         </div>
                         <div>
-                            <!--
-                            <h1 class="text-white m-b-20 font-weight-normal">Exploring Enlink</h1>
-                            <p class="text-white font-size-16 lh-2 w-80 opacity-08">Climb leg rub face on everything give attitude nap all day for under the bed. Chase mice attack feet but rub face on everything hopped up.</p>
-                            -->
+
+                            <h1 class="text-white m-b-20 font-weight-bold">ADSITE CRM</h1>
+                            <p class="text-white font-size-16 lh-2 w-80 opacity-08">Jangkau lebih banyak customer dari berbagai platform dan kelola leads dengan mudah di ADSITE CRM</p>
+
                         </div>
                         <div class="d-flex justify-content-between">
                             <span class="text-white mr-1">©crm.adsite.id</span>
