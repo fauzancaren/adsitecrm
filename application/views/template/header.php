@@ -329,7 +329,7 @@
                     </li>
                     -->
                         <li class="nav-item dropdown mb-1">
-                            <a href="report.php">
+                            <a href="<?= base_url("admin/report") ?>">
                                 <span class="icon-holder">
                                     <i class="anticon anticon-pie-chart font-size-20"></i>
                                 </span>
