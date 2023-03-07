@@ -50,7 +50,7 @@
                         <div class="row no-gutters h-100 align-items-center">
                             <div class="col-md-8 col-lg-7 col-xl-6 mx-auto px-5">
                                 <h2>Sign In</h2>
-                                <p class="m-b-30">Enter your credential to get access</p>
+                                <p class="m-b-30">Enter your credential</p>
                                 <form action="<?= base_url("login/check_login") ?>" method="post">
                                     <div class="form-group">
                                         <label class="font-weight-semibold" for="userName">Username:</label>
@@ -69,16 +69,23 @@
                                     </div>
                                     <div class="form-group">
                                         <div class="d-flex align-items-center justify-content-between">
+                                            <!--
                                             <span class="font-size-13 text-muted">
-                                                <span class="d-flex justify-content-center" style="color : red;"> <?= $error ?></span>
-                                                <!--  Don't have an account? 
-                                                <a class="small" href=""> Signup</a>
-                                                 -->
-                                            </span>
 
-                                            <button class="btn btn-primary">Sign In</button>
+                                                Don't have an account
+                                                <a class="small" href="">Signup</a>
+
+                                            </span>
+                                            -->
+                                            <div class="col pl-0 pr-1">
+                                                <button class="btn btn-light col d-flex align-items-center justify-content-center"><img src="<?= base_url("assets/images/others/google.png") ?>" alt="" width="20" class="mr-1"> Google</button>
+                                            </div>
+                                            <div class="col p-0">
+                                                <button class="btn btn-primary col">Sign In</button>
+                                            </div>
                                         </div>
                                     </div>
+                                    <span class="d-flex justify-content-center col-12" style="color : red;"> <?= $error ?></span>
                                 </form>
                             </div>
                         </div>
