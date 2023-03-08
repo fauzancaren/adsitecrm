@@ -12,62 +12,67 @@ class Login extends CI_Controller
     }
     public function index()
     {
-        $client_id = '57741008501-7lupg3ae0o49kc1416dri88tu87rdfar.apps.googleusercontent.com';
-        $client_secret = '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';
-        $redirect_uri = base_url('login');
+        $row = $this->M_login->login(get_cookie('email'), $this->M_app->DecryptedPassword(get_cookie('password')));
+        if ($row) {
+            $this->get_menu($row);
+        } else { 
+            $client_id = '57741008501-7lupg3ae0o49kc1416dri88tu87rdfar.apps.googleusercontent.com';
+            $client_secret = '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';
+            $redirect_uri = base_url('login');
 
-        $google_client = new Google_Client();
-        $google_client->setClientId($client_id); //masukkan ClientID anda
-        $google_client->setClientSecret($client_secret); //masukkan Client Secret Key anda
-        $google_client->setRedirectUri($redirect_uri); //Masukkan Redirect Uri anda
-        $google_client->addScope('email');
-        $google_client->addScope('profile');
-        if(isset($_GET["code"]))
-        {
-            $token = $google_client->fetchAccessTokenWithAuthCode($_GET["code"]);
-            if(!isset($token["error"]))
+            $google_client = new Google_Client();
+            $google_client->setClientId($client_id); //masukkan ClientID anda
+            $google_client->setClientSecret($client_secret); //masukkan Client Secret Key anda
+            $google_client->setRedirectUri($redirect_uri); //Masukkan Redirect Uri anda
+            $google_client->addScope('email');
+            $google_client->addScope('profile');
+            if(isset($_GET["code"]))
             {
-                $google_client->setAccessToken($token['access_token']);
-                $this->session->set_userdata('access_token', $token['access_token']);
-                $google_service = new Google_Service_Oauth2($google_client);
-                $data = $google_service->userinfo->get();
-                $current_datetime = date('Y-m-d H:i:s');
-                $user_data = array(
-                    'first_name' => $data['given_name'],
-                    'last_name'  => $data['family_name'],
-                    'email_address' => $data['email'],
-                    'profile_picture'=> $data['picture'],
-                    'updated_at' => $current_datetime
-                );
-                $this->session->set_userdata('user_data', $data);
+                $token = $google_client->fetchAccessTokenWithAuthCode($_GET["code"]);
+                if(!isset($token["error"]))
+                {
+                    $google_client->setAccessToken($token['access_token']);
+                    $this->session->set_userdata('access_token', $token['access_token']);
+                    $google_service = new Google_Service_Oauth2($google_client);
+                    $data = $google_service->userinfo->get();
+                    $current_datetime = date('Y-m-d H:i:s');
+                    $user_data = array(
+                        'first_name' => $data['given_name'],
+                        'last_name'  => $data['family_name'],
+                        'email_address' => $data['email'],
+                        'profile_picture'=> $data['picture'],
+                        'updated_at' => $current_datetime
+                    );
+                    $this->session->set_userdata('user_data', $data);
+                }
             }
-        }
-        if(!$this->session->userdata('access_token'))
-        { 
-            //reset session
-            $this->session->flashdata();
-            delete_cookie('username');
-            delete_cookie('email');
-            delete_cookie('password');
-            delete_cookie('level'); 
+            if(!$this->session->userdata('access_token'))
+            { 
+                //reset session
+                $this->session->flashdata();
+                delete_cookie('username');
+                delete_cookie('email');
+                delete_cookie('password');
+                delete_cookie('level'); 
 
-            $this->session->unset_userdata('access_token');
-            $this->session->unset_userdata('user_data');
-            $this->session->flashdata();
+                $this->session->unset_userdata('access_token');
+                $this->session->unset_userdata('user_data');
+                $this->session->flashdata();
 
-            $login_button =  $google_client->createAuthUrl();
-            $data['login_button'] = $login_button;
-            $this->load->view('template/login', $data);
-        }
-        else
-        {
-            $row = $this->M_login->login_email($this->session->userdata('user_data')['email']); 
-            if ($row) {
-                $this->get_menu($row);
-            } else {
-                redirect("login/signup","refresh");
+                $login_button =  $google_client->createAuthUrl();
+                $data['login_button'] = $login_button;
+                $this->load->view('template/login', $data);
             }
-        } 
+            else
+            {
+                $row = $this->M_login->login_email($this->session->userdata('user_data')['email']); 
+                if ($row) {
+                    $this->get_menu($row);
+                } else {
+                    redirect("login/signup","refresh");
+                }
+            } 
+        }
     }
     public function signup(){
         $this->load->view('template/registrasi');
@@ -160,6 +165,7 @@ class Login extends CI_Controller
         if ($row->level == "GM") redirect("gm", 'refresh');
         if ($row->level == "Management") redirect("managemant", 'refresh');
     }
+    
     public function checkout()
     {
 
