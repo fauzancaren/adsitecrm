@@ -52,7 +52,7 @@
                         <div class="row no-gutters h-100 align-items-center">
                             <div class="col-md-8 col-lg-7 col-xl-6 mx-auto px-5">
                                 <h2>Sign Up</h2>
-                                <p class="m-b-30">Enter your credential</p>
+                                <p class="m-b-30">Registrasi baru</p>
                                 <div>
                                     <div class="form-group">
                                         <label class="font-weight-semibold" for="userName">Username:</label>
