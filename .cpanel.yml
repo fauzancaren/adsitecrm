@@ -2,5 +2,13 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/balj9567/public_html/crm/
-    - /bin/cp -R application $DEPLOYPATH 
+    - /bin/cp -R application/controllers $DEPLOYPATH 
+    - /bin/cp -R application/config $DEPLOYPATH 
+    - /bin/cp -R application/core $DEPLOYPATH 
+    - /bin/cp -R application/helpers $DEPLOYPATH 
+    - /bin/cp -R application/hooks $DEPLOYPATH 
+    - /bin/cp -R application/language $DEPLOYPATH 
+    - /bin/cp -R application/libraries $DEPLOYPATH 
+    - /bin/cp -R application/models $DEPLOYPATH 
+    - /bin/cp -R application/views $DEPLOYPATH 
     - /bin/cp -R assets $DEPLOYPATH  
