@@ -13,7 +13,9 @@
 
     <!-- Core css -->
     <link href="<?= base_url("assets/css/app.min.css") ?>" rel="stylesheet">
+	<link href="<?= base_url("assets/sweetalert/dist/sweetalert2.min.css") ?>" rel="stylesheet" type="text/css"> 
 
+	<script src="<?= base_url("assets/sweetalert/dist/sweetalert2.all.min.js") ?>"></script> 
 </head>
 
 <body>
@@ -51,12 +53,12 @@
                             <div class="col-md-8 col-lg-7 col-xl-6 mx-auto px-5">
                                 <h2>Sign In</h2>
                                 <p class="m-b-30">Enter your credential</p>
-                                <form action="<?= base_url("login/check_login") ?>" method="post">
+                                <div>
                                     <div class="form-group">
                                         <label class="font-weight-semibold" for="userName">Username:</label>
                                         <div class="input-affix">
                                             <i class="prefix-icon anticon anticon-user"></i>
-                                            <input type="text" class="form-control" id="userName" name="email" placeholder="Username">
+                                            <input type="text" class="form-control" id="username" name="email" placeholder="username">
                                         </div>
                                     </div>
                                     <div class="form-group">
@@ -70,10 +72,10 @@
                                     <div class="form-group">
                                         <div class="d-flex align-items-center justify-content-between">
                                             <div class="col pl-0 pr-1">
-                                                <button class="btn btn-light col d-flex align-items-center justify-content-center"><img src="<?= base_url("assets/images/others/google.png") ?>" alt="" width="20" class="mr-1"> Google</button>
+                                                <a class="btn btn-light col d-flex align-items-center justify-content-center" href="<?= $login_button ?>"><img src="<?= base_url("assets/images/others/google.png") ?>" alt="" width="20" class="mr-1"> Google</a>
                                             </div>
                                             <div class="col p-0">
-                                                <button class="btn btn-primary col">Sign In</button>
+                                                <button class="btn btn-primary col" id="submit">Sign In</button>
                                             </div>
                                         </div>
                                     </div>
@@ -81,8 +83,8 @@
                                         Don't have an account
                                         <a class="small ml-1 " href="">Signup</a>
                                     </span>
-                                    <span class="font-size-13 d-flex justify-content-center align-items-center mt-2 " style="color : red;"> <?= $error ?></span>
-                                </form>
+                                    <span class="font-size-13 d-flex justify-content-center align-items-center mt-2 " style="color : red;" id="message"></span>
+                                </div>
                             </div>
 
                         </div>
@@ -99,7 +101,52 @@
 
     <!-- Core JS -->
     <script src="<?= base_url("assets/js/app.min.js") ?>"></script>
-
+    <script>
+        $("#username").keyup(function(event) {
+            if (event.keyCode === 13) {
+                $("#password").focus();
+            }
+        });
+        $("#password").keyup(function(event) {
+            if (event.keyCode === 13) {
+                $("#submit").click();
+            }
+        });
+        $('#submit').on('click', function() {  
+            $(this).html('<i class="fas fa-circle-notch fa-spin"></i> Loading');
+            $.ajax({
+                method: "POST",
+                url: "<?php echo site_url('login/check_login') ?>",
+                data: {
+                    'email': $("#username").val(),
+                    'password': $("#password").val()
+                },
+                success: function(data) {
+                    console.log(data);
+                    $("#message").html(data.message); 
+                    $("#submit").html('Sign In');
+                    if (data.status == '5') {
+                        // Swal.fire({
+                        //     showClass: {
+                        //         popup: 'animate__animated animate__zoomInUp', 
+                        //     }, 
+                        //     hideClass: {
+                        //         popup: 'animate__animated fadeOutUp animate__zoomOutDown',
+                        //     },
+                        //     icon: 'success',
+                        //     title: 'Login Success',
+                        //     showConfirmButton: false,
+                        //     timer: 1500,
+                        // }).then((result) => {
+                        //     if (result.dismiss === Swal.DismissReason.timer) {
+                                window.location.replace('<?= site_url(); ?>');
+                        //     }
+                        // }) 
+                    }
+                }
+            });
+        })
+    </script>
 </body>
 
 </html>

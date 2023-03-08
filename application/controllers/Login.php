@@ -12,25 +12,65 @@ class Login extends CI_Controller
     }
     public function index()
     {
-        $row = $this->M_login->login(get_cookie('email'), $this->M_app->DecryptedPassword(get_cookie('password')));
-        $err_code = $this->input->get("message");
-        if ($row) {
-            $this->get_menu($row);
-        } else {
+        $client_id = '57741008501-7lupg3ae0o49kc1416dri88tu87rdfar.apps.googleusercontent.com';
+        $client_secret = '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';
+        $redirect_uri = base_url('login');
+
+        $google_client = new Google_Client();
+        $google_client->setClientId($client_id); //masukkan ClientID anda
+        $google_client->setClientSecret($client_secret); //masukkan Client Secret Key anda
+        $google_client->setRedirectUri($redirect_uri); //Masukkan Redirect Uri anda
+        $google_client->addScope('email');
+        $google_client->addScope('profile');
+        if(isset($_GET["code"]))
+        {
+            $token = $google_client->fetchAccessTokenWithAuthCode($_GET["code"]);
+            if(!isset($token["error"]))
+            {
+                $google_client->setAccessToken($token['access_token']);
+                $this->session->set_userdata('access_token', $token['access_token']);
+                $google_service = new Google_Service_Oauth2($google_client);
+                $data = $google_service->userinfo->get();
+                $current_datetime = date('Y-m-d H:i:s');
+                $user_data = array(
+                    'first_name' => $data['given_name'],
+                    'last_name'  => $data['family_name'],
+                    'email_address' => $data['email'],
+                    'profile_picture'=> $data['picture'],
+                    'updated_at' => $current_datetime
+                );
+                $this->session->set_userdata('user_data', $data);
+            }
+        }
+        if(!$this->session->userdata('access_token'))
+        { 
             //reset session
             $this->session->flashdata();
             delete_cookie('username');
             delete_cookie('email');
             delete_cookie('password');
-            delete_cookie('level');
+            delete_cookie('level'); 
 
-            $data["error"] = "";
-            if ($err_code == 1) $data["error"] = "Silahkan masukan email sebelum klik login!!!";
-            if ($err_code == 2) $data["error"] = "Silahkan masukan password sebelum klik login!!!";
-            if ($err_code == 3) $data["error"] = "Email belum Terdaftar";
-            if ($err_code == 4) $data["error"] = "password tidak sesuai";
+            $this->session->unset_userdata('access_token');
+            $this->session->unset_userdata('user_data');
+            $this->session->flashdata();
+
+            $login_button =  $google_client->createAuthUrl();
+            $data['login_button'] = $login_button;
             $this->load->view('template/login', $data);
         }
+        else
+        {
+            $row = $this->M_login->login_email($this->session->userdata('user_data')['email']); 
+            if ($row) {
+                $this->get_menu($row);
+            } else {
+                redirect("login/signup","refresh");
+            }
+        } 
+    }
+    public function signup(){
+        $this->load->view('template/registrasi');
     }
     public function check_login()
     {
@@ -39,32 +79,62 @@ class Login extends CI_Controller
 
         //email kosong
         if (!$email) {
-            redirect("login?message=1", 'refresh');
-            return false;
+            $json = array(
+                "status" => "1",
+                "message" => "Silahkan masukan email sebelum klik login!!!"
+            );
+            header('Content-type: application/json');
+            echo json_encode($json);
+            return true;
         }
 
         //password kosong
-        if (!$password) {
-            redirect("login?message=2", 'refresh');
-            return false;
+        else if (!$password) {
+            $json = array(
+                "status" => "2",
+                "message" => "Silahkan masukan password sebelum klik login!!!",
+            );
+            header('Content-type: application/json');
+            echo json_encode($json);
+            return true;
         }
 
 
         //Email belum registrasi
         $row = $this->M_login->login_email($email);
         if (!$row) {
-            redirect("login?message=3", 'refresh');
-            return false;
+            $json = array(
+                "status" => "3",
+                "message" => "Email belum Terdaftar",
+            );
+            header('Content-type: application/json');
+            echo json_encode($json);
+            return true;
         }
 
         //password salah
         $row = $this->M_login->login($email, $password);
         if (!$row) {
-            redirect("login?message=4", 'refresh');
-            return false;
+            $json = array(
+                "status" => "4",
+                "message" => "password tidak sesuai",
+            );
+            header('Content-type: application/json');
+            echo json_encode($json);
+            return true;
         }
 
-        $this->get_menu($row);
+        set_cookie('username', $row->name, '3600');
+        set_cookie('email', $row->email, '3600');
+        set_cookie('password', $this->M_app->EncryptedPassword(str_replace("'", "''",  $row->password)), '3600');
+        set_cookie('level', $row->level, '3600');
+
+        $json = array(
+            "status" => "5",
+            "message" => "",
+        );
+        header('Content-type: application/json');
+        echo json_encode($json);
     }
     public function get_menu($row)
     {
@@ -83,7 +153,7 @@ class Login extends CI_Controller
         set_cookie('password', $this->M_app->EncryptedPassword(str_replace("'", "''",  $row->password)), '3600');
         set_cookie('level', $row->level, '3600');
 
-        //redirect menu sesuai dengan level 
+        //redirect menu sesuai dengan level
         if ($row->level == "Admin") redirect("admin", 'refresh');
         if ($row->level == "Leader") redirect("leader", 'refresh');
         if ($row->level == "Sales") redirect("sales", 'refresh');
@@ -92,6 +162,9 @@ class Login extends CI_Controller
     }
     public function checkout()
     {
+
+        $this->session->unset_userdata('access_token');
+        $this->session->unset_userdata('user_data');
         $this->session->flashdata();
         delete_cookie('username');
         delete_cookie('email');

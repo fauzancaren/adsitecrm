@@ -20,7 +20,7 @@ class M_login extends CI_Model
 		$user = str_replace("'", "''", $email);
 		$query = $this->db->where("email",$user)->get("user");
 		if ($query->num_rows() == 1) {
-			return true;
+			return $query->row();
 		} else {
 			return false;
 		}
