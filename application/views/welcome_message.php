@@ -149,6 +149,12 @@
                                 <li><a href="shop-details.html">Shop Details</a></li>
                             </ul>
                         </li>
+                        <li> 
+                            <a href="<?= base_url("login")?>" class="template-btn bordered-btn">
+                                Masuk
+                                <i class="far fa-long-arrow-right"></i>
+                            </a>
+                        </li>
                     </ul>
                 </nav>
                 <a href="#" class="panel-close">
