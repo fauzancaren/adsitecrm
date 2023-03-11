@@ -319,6 +319,7 @@
         </div>
     </div>
 </div>
+
 <script>
     $("#form-validation").validate({
         ignore: ':hidden:not(:checkbox)',

@@ -27664,8 +27664,8 @@ a.badge-purple:focus {
     opacity: 0.75;
     font-size: 14px;
     font-weight: 500;
-    background-color: transparent;
-    color: #2a2a2a;
+    background-color: #cfcfcf;
+    color: #000000;
     border: 1px solid transparent;
     padding: 5px 15px
 }
@@ -29392,3 +29392,8 @@ div.is-invalid {
     border-color: #de4436
 }
   
+
+.input-light{
+    border: 1px solid #EFF0F3;
+    background-color: #EFF0F3 !important; 
+}

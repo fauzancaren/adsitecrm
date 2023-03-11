@@ -85,10 +85,12 @@
         }
     </style>
 
-
     <!-- Core Vendors JS -->
     <script src="<?= base_url("assets/js/vendors.min.js") ?>"></script>
-    <script src="<?= base_url("assets/js/moment/moment.min.js") ?>"></script>
+    <script src="<?= base_url("assets/js/moment/moment.min.js") ?>"></script>  
+    <script type="text/javascript" src="<?= base_url("assets/js/daterangepicker.min.js") ?>"></script>
+    <link rel="stylesheet" type="text/css" href="<?= base_url("assets/css/daterangepicker.min.css")?>" />
+
 </head>
 
 <body>
@@ -144,7 +146,7 @@
                     <ul class="nav-right">
 
                         <li class="mr-lg-5">
-                            <div>
+                            <div class="d-none">
                                 <form action="search_leads.php" method="get" class=" d-lg-block d-none d-sm-none form-inline  ">
                                     <div class="input-group">
                                         <input type="text" class="form-control form-control-sm bg-light " placeholder="Search leads..." aria-label="Search" aria-describedby="basic-addon2" name="search">

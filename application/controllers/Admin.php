@@ -8,6 +8,7 @@ class Admin extends CI_Controller
         parent::__construct();
         $this->load->model('M_app');
         $this->load->helper('cookie');
+        if (get_cookie('level') != "Admin") redirect("login", 'refresh');
     }
 
 
@@ -21,14 +22,12 @@ class Admin extends CI_Controller
         $this->load->view('template/navbar_mobile', $data);
     }
 
-    public function leads($category = "New")
-    {
-        if (get_cookie('level') != "Admin") redirect("login", 'refresh');
-        $data["category"] = $category;
-        $this->load->view('template/header', $data);
-        $this->load->view('admin/leads', $data);
-        $this->load->view('template/footer', $data);
-        $this->load->view('template/navbar_mobile', $data);
+    public function leads()
+    { 
+        $this->load->view('template/header');
+        $this->load->view('admin/leads');
+        $this->load->view('template/footer');
+        $this->load->view('template/navbar_mobile');
     }
     public function data_leads($id)
     {
