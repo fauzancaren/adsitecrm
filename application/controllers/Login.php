@@ -34,16 +34,22 @@ class Login extends CI_Controller
                     $google_client->setAccessToken($token['access_token']);
                     $this->session->set_userdata('access_token', $token['access_token']);
                     $google_service = new Google_Service_Oauth2($google_client);
-                    $data = $google_service->userinfo->get();
-                    $current_datetime = date('Y-m-d H:i:s');
-                    $user_data = array(
-                        'first_name' => $data['given_name'],
-                        'last_name'  => $data['family_name'],
-                        'email_address' => $data['email'],
-                        'profile_picture'=> $data['picture'],
-                        'updated_at' => $current_datetime
-                    );
-                    $this->session->set_userdata('user_data', $data);
+                    try {
+                        //code...
+                        $data = $google_service->userinfo->get();
+                        $current_datetime = date('Y-m-d H:i:s');
+                        $user_data = array(
+                            'first_name' => $data['given_name'],
+                            'last_name'  => $data['family_name'],
+                            'email_address' => $data['email'],
+                            'profile_picture'=> $data['picture'],
+                            'updated_at' => $current_datetime
+                        );
+                        $this->session->set_userdata('user_data', $data);
+                    } catch (\Throwable $th) {
+                       echo $th;
+                       exit;
+                    }
                 }
             }
             if(!$this->session->userdata('access_token'))
