@@ -125,23 +125,8 @@
                     console.log(data);
                     $("#message").html(data.message); 
                     $("#submit").html('Sign In');
-                    if (data.status == '5') {
-                        // Swal.fire({
-                        //     showClass: {
-                        //         popup: 'animate__animated animate__zoomInUp', 
-                        //     }, 
-                        //     hideClass: {
-                        //         popup: 'animate__animated fadeOutUp animate__zoomOutDown',
-                        //     },
-                        //     icon: 'success',
-                        //     title: 'Login Success',
-                        //     showConfirmButton: false,
-                        //     timer: 1500,
-                        // }).then((result) => {
-                        //     if (result.dismiss === Swal.DismissReason.timer) {
-                                window.location.replace('<?= site_url(); ?>');
-                        //     }
-                        // }) 
+                    if (data.status == '5') { 
+                        window.location.replace('<?= site_url("login"); ?>'); 
                     }
                 }
             });
