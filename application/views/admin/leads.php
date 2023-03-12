@@ -69,8 +69,24 @@
                 </div>
             </div>
 
-            <div class="tab-content row p-2 py-3 " id="pills-tabContent">
-                <div class="tab-pane fade show active col" id="pills-new" role="tabpanel" aria-labelledby="pills-new-tab">New Leads</div>
+            <div class="tab-content row px-2 py-lg-3 py-2" id="pills-tabContent">
+                <div class="tab-pane fade show active col" id="pills-new" role="tabpanel" aria-labelledby="pills-new-tab">
+                    <div class="row d-flex justify-content-between p-2">
+                        <span>New Leads</span>
+                        <div class="dropdown dropdown-animated  scale-left ">
+                            <button type="button" class="btn btn-sm dropdown-toggle" data-toggle="dropdown">
+                                Row Count
+                            </button>
+                            <div class="dropdown-menu">
+                                <a href="leads.php" class="dropdown-item btn" type="button">Show 25 Rows</a>
+                                <a href="contacted.php" class="dropdown-item btn" type="button">Show 50 Rows</a>
+                                <a href="close.php" class="dropdown-item btn" type="button">Show 100 Rows</a>
+                                <a href="pending.php" class="dropdown-item btn" type="button">Show All</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
                 <div class="tab-pane fade col" id="pills-contacted" role="tabpanel" aria-labelledby="pills-contacted-tab">Contacted</div>
                 <div class="tab-pane fade col" id="pills-visit" role="tabpanel" aria-labelledby="pills-visit-tab">Visit</div>
                 <div class="tab-pane fade col" id="pills-close" role="tabpanel" aria-labelledby="pills-close-tab">close</div>
