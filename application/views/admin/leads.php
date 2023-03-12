@@ -89,12 +89,13 @@
 
 <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
     <div class="d-flex justify-content-between">
-        <h5>Advance Setting</h5>
+        <h5>Filter</h5>
         <button type="button" class="close" aria-label="Close" data-toggle="offcanvas">
             <i class="fas fa-times"></i>
         </button>
     </div>
     <div class="d-block pt-4">
+        <!--
         <h6 class="font-weight-bold" style="color:#001A72"><i class="fas fa-list mr-2"></i>Row Count</h6>
         <div class="d-flex justify-content-between pb-0">
             <label for="filter-row-1">10 Rows</label>
@@ -126,19 +127,19 @@
                 <input class="form-check-input" type="radio" name="filter-row" id="filter-row-5" value="">
             </div>
         </div>
-        <span class="border d-block mb-2 mt-2"></span>
+-->
 
         <h6 class="font-weight-bold" style="color:#001A72"><i class="fas fa-calendar-alt mr-2"></i>Filter Date</h6>
         <div class="d-flex justify-content-between pb-0">
             <label for="filter-date-1">Today</label>
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="filter-date" id="filter-date-1" value="0" checked>
+                <input class="form-check-input" type="radio" name="filter-date" id="filter-date-1" value="0">
             </div>
         </div>
         <div class="d-flex justify-content-between pb-0">
             <label for="filter-date-2">last 7 days</label>
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="filter-date" id="filter-date-2" value="7">
+                <input class="form-check-input" type="radio" name="filter-date" id="filter-date-2" value="7" checked>
             </div>
         </div>
         <div class="d-flex justify-content-between pb-0">
@@ -159,15 +160,44 @@
                 <input class="form-check-input" type="radio" name="filter-date" id="filter-date-5" value="">
             </div>
         </div>
-        <input class="form-control form-control-sm" type="text" name="daterange" value="01/01/2018 - 01/15/2018" disabled />
-        <span class="border d-block mb-2 mt-2"></span>
+        <input class="form-control form-control-sm mb-4" type="text" name="daterange" value="01/01/2018 - 01/15/2018" disabled />
+
+        <span class="border d-block my-3"></span>
+
+        <h6 class="font-weight-bold" style="color:#001A72"><i class="fas fa-list mr-2"></i>Status</h6>
+        <div class="d-flex justify-content-between pb-0">
+            <label for="filter-row-1">New</label>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="filter-row" id="filter-row-1" value="10" checked>
+            </div>
+        </div>
+        <div class="d-flex justify-content-between pb-0">
+            <label for="filter-row-2">Contacted</label>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="filter-row" id="filter-row-2" value="25">
+            </div>
+        </div>
+        <div class="d-flex justify-content-between pb-0">
+            <label for="filter-row-3">Visit</label>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="filter-row" id="filter-row-3" value="50">
+            </div>
+        </div>
+        <div class="d-flex justify-content-between pb-0">
+            <label for="filter-row-4">Close</label>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="filter-row" id="filter-row-4" value="100">
+            </div>
+        </div>
+
+        <span class="border d-block my-3"></span>
 
 
         <h6 class="font-weight-bold" style="color:#001A72"><i class="fas fa-shapes mr-2"></i>Filter Category</h6>
         <div class="d-flex justify-content-between pb-0">
             <label for="filter-categori-1">Cold</label>
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" name="filter-categori" id="filter-categori-1" value="Cold" checked>
+                <input class="form-check-input" type="checkbox" name="filter-categori" id="filter-categori-1" value="Cold">
             </div>
         </div>
         <div class="d-flex justify-content-between pb-0">
@@ -206,9 +236,9 @@
                 <input class="form-check-input" type="checkbox" name="filter-categori" id="filter-categori-7" value="Checkout">
             </div>
         </div>
-        <span class="border d-block mb-2 mt-2"></span>
+
         <div class="d-flex justify-content-center pb-0 col-12 p-0">
-            <button type="button" class="btn btn-primary btn-sm w-100" data-toggle="offcanvas">Submit and view</button>
+            <button type="button" class="btn btn-primary w-100 my-4" data-toggle="offcanvas">Submit and view</button>
         </div>
     </div>
 </div>
