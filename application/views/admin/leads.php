@@ -168,25 +168,25 @@
         <div class="d-flex justify-content-between pb-0">
             <label for="filter-row-1">New</label>
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="filter-row" id="filter-row-1" value="10" checked>
+                <input class="form-check-input" type="checkbox" name="filter-row" id="filter-row-1" value="10" checked>
             </div>
         </div>
         <div class="d-flex justify-content-between pb-0">
             <label for="filter-row-2">Contacted</label>
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="filter-row" id="filter-row-2" value="25">
+                <input class="form-check-input" type="checkbox" name="filter-row" id="filter-row-2" value="25">
             </div>
         </div>
         <div class="d-flex justify-content-between pb-0">
             <label for="filter-row-3">Visit</label>
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="filter-row" id="filter-row-3" value="50">
+                <input class="form-check-input" type="checkbox" name="filter-row" id="filter-row-3" value="50">
             </div>
         </div>
         <div class="d-flex justify-content-between pb-0">
             <label for="filter-row-4">Close</label>
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="filter-row" id="filter-row-4" value="100">
+                <input class="form-check-input" type="checkbox" name="filter-row" id="filter-row-4" value="100">
             </div>
         </div>
 
