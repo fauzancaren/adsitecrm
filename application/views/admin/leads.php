@@ -173,42 +173,42 @@
         <div class="d-flex justify-content-between pb-0">
             <label for="filter-categori-2">Warm</label>
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" name="filter-categori" id="filter-categori-2" value="Warm" checked>
+                <input class="form-check-input" type="checkbox" name="filter-categori" id="filter-categori-2" value="Warm">
             </div>
         </div>
         <div class="d-flex justify-content-between pb-0">
             <label for="filter-categori-3">Hot</label>
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" name="filter-categori" id="filter-categori-3" value="Hot" checked>
+                <input class="form-check-input" type="checkbox" name="filter-categori" id="filter-categori-3" value="Hot">
             </div>
         </div>
         <div class="d-flex justify-content-between pb-0">
             <label for="filter-categori-4">Invalid</label>
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" name="filter-categori" id="filter-categori-4" value="Invalid" checked>
+                <input class="form-check-input" type="checkbox" name="filter-categori" id="filter-categori-4" value="Invalid">
             </div>
         </div>
         <div class="d-flex justify-content-between pb-0">
             <label for="filter-categori-5">Pending</label>
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" name="filter-categori" id="filter-categori-5" value="Pending" checked>
+                <input class="form-check-input" type="checkbox" name="filter-categori" id="filter-categori-5" value="Pending">
             </div>
         </div>
         <div class="d-flex justify-content-between pb-0">
             <label for="filter-categori-6">Reserve</label>
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" name="filter-categori" id="filter-categori-6" value="Reserve" checked>
+                <input class="form-check-input" type="checkbox" name="filter-categori" id="filter-categori-6" value="Reserve">
             </div>
         </div>
         <div class="d-flex justify-content-between pb-0">
             <label for="filter-categori-7">Boking/Checkout</label>
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" name="filter-categori" id="filter-categori-7" value="Checkout" checked>
+                <input class="form-check-input" type="checkbox" name="filter-categori" id="filter-categori-7" value="Checkout">
             </div>
         </div>
         <span class="border d-block mb-2 mt-2"></span>
-        <div class="d-flex justify-content-center pb-0">
-            <button type="button" class="btn btn-primary btn-sm" data-toggle="offcanvas">Submit and view</button>
+        <div class="d-flex justify-content-center pb-0 col-12 p-0">
+            <button type="button" class="btn btn-primary btn-sm w-100" data-toggle="offcanvas">Submit and view</button>
         </div>
     </div>
 </div>
