@@ -229,7 +229,7 @@
         <div class="d-flex justify-content-between pb-0">
             <label for="filter-row-1">New</label>
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" name="filter-row" id="filter-row-1" value="10" checked>
+                <input class="form-check-input" type="checkbox" name="filter-row" id="filter-row-1" value="10">
             </div>
         </div>
         <div class="d-flex justify-content-between pb-0">
