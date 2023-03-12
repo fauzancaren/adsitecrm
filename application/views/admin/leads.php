@@ -75,7 +75,7 @@
                         <span>New Leads</span>
                         <div class="dropdown dropdown-animated  scale-left ">
                             <button type="button" class="btn btn-sm dropdown-toggle" data-toggle="dropdown">
-                                Row Count
+                                Row Data
                             </button>
                             <div class="dropdown-menu">
                                 <a href="leads.php" class="dropdown-item btn" type="button">Show 25 Rows</a>
