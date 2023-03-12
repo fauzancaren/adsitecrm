@@ -405,7 +405,7 @@
         width: 350px;
         padding: 1rem 2rem;
         overflow-y: auto;
-        background-color: #F9F7F7;
+        background-color: #fff;
         transition: -webkit-transform .3s ease-in-out;
         transition: transform .3s ease-in-out;
         transition: transform .3s ease-in-out, -webkit-transform .3s ease-in-out;
