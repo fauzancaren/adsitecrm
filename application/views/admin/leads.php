@@ -71,7 +71,7 @@
 
             <div class="tab-content row px-2 py-lg-3 py-2" id="pills-tabContent">
                 <div class="tab-pane fade show active col" id="pills-new" role="tabpanel" aria-labelledby="pills-new-tab">
-                    <div class="row d-flex justify-content-between p-2">
+                    <div class="row d-flex justify-content-between align-items-center p-2">
                         <span>New Leads</span>
                         <div class="dropdown dropdown-animated  scale-left ">
                             <button type="button" class="btn btn-sm dropdown-toggle" data-toggle="dropdown">
